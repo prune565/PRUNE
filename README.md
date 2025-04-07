@@ -1,6 +1,6 @@
 
 
-To run our method on GOOD datasets, here is an example:
+To run our method, here is an example for GOODMotif dataset:
 
 ```
 python run.py --device 0 --batch_size 64 --dataset goodmotif --domain basis --shift covariate --base_gnn gin --early_stop_epochs 50  --nhid 128 --epochs 100 --pretraining_epochs 10 --nlayers 4 --edge_gnn_layers 2  --edge_gnn gin --edge_uniform_penalty 0.001 --edge_prob_thres 90 --edge_budget 0.85 --edge_penalty 10   --seed 1 --with_bn --dropout 0.0
