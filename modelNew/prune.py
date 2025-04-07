@@ -160,19 +160,9 @@ class Model(BaseModel):
         self.epochs_since_improvement=0
         self.stop_training=False
         
-        
         self.train_metrics = []
         self.val_metrics = []
         self.test_metrics = []
-        self.train_grad_sim = []
-        self.val_grad_sim = []
-        self.test_grad_sim = []
-        self.gradsim_avg_ssl = []
-        self.gradsim_avg_meta = []
-        
-        self.train_learn_edge_probs = []
-        self.valid_learn_edge_probs = []
-        self.test_learn_edge_probs = []
 
 
     def create_mlp(self,input_dim, hidden_dim, output_dim, num_layers,cls=True):
