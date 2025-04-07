@@ -142,7 +142,7 @@ parser.add_argument('--edge_prob_thres', type=int, default=50, help='edge prob t
 parser.add_argument('--penalty', type=float, default=1e-1, help='SSL Penalty weight.')
 parser.add_argument('--gradMatching_penalty', type=float, default=1.0, help='meta cls Penalty weight.') #! actually meta cls penalty, not gradient matching penalty
 parser.add_argument('--featureMasking', action='store_true', default=False, help='mask input or not')
-parser.add_argument('--useAutoAug', action='store_true', default=False, help='use learnable edge dropping')
+parser.add_argument('--useAutoAug', action='store_true', default=True, help='use learnable edge dropping')
 parser.add_argument('--uniform_p', type=float, default=-1., help='prob for uniform reg')
 
 
