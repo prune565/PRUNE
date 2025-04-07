@@ -7,3 +7,10 @@ python run.py --dropout 0.0 --batch_size 64 --domain basis --shift covariate --b
 ```
 
 Here, `edge_gnn` corresponds to the subgraph selector $t(\cdot)$, `edge_gnn_layers` denotes the #layers in $t(\cdot)$. `edge_uniform_penalty`  corresponds to $\lambda_2$ in the paper, `edge_prob_thres`  corresponds to $K$ in our paper, `edge_budget` corresponds to $\eta$ in our paper, `edge_penalty`  corresponds to $\lambda_1$ in our paper. 
+
+The software versions are listed below:
+
+```
+torch==1.2.1
+```
+
