@@ -54,7 +54,7 @@ from mmcv import Config
 from ogb.graphproppred import Evaluator, PygGraphPropPredDataset
 
 from modelNew.prune import Model
-from modelNew.utils import save_numpy_array_to_file,FeatureSelect,RandomEdgeDrop
+from modelNew.utils import save_numpy_array_to_file,RandomEdgeDrop
 from GOOD.data.good_datasets.good_cmnist import GOODCMNIST
 from GOOD.data.good_datasets.good_motif import GOODMotif
 from GOOD.data.good_datasets.good_hiv import GOODHIV
@@ -63,9 +63,6 @@ from GOOD.data.good_datasets.good_sst2 import GOODSST2
 
 def write_results_to_file(fpath, n, s):
     # Check if the directory exists, if not, create it
-    # fpath: 存放路径
-    # n: 文件名 （.txt结尾）
-    # s: 内容
     if not os.path.exists(fpath):
         try:
             os.makedirs(fpath)
