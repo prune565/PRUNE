@@ -133,9 +133,6 @@ class Model(BaseModel):
 
         self.gnn.to(device)
         
-        # self.encoder_model = Encoder(self.gnn, [aug1,aug2],learnable_aug=self.useAutoAug).to(device)
-        # self.contrast_model = DualBranchContrast(loss=L.InfoNCE(tau=temp), mode='G2G').to(device)
-        # self.contrast_model_non_agg = DualBranchContrast(loss=modInfoNCE(tau=temp), mode='G2G').to(device)
         
         self.lr_scheduler = lr_scheduler
         if adapt_params=='edge_gnn':
@@ -145,14 +142,7 @@ class Model(BaseModel):
         else:
             assert "Please specify  correct 'adapt_params'!"
         
-        # meta loss learner
-        # self.meta_loss_head = nn.Sequential(nn.Linear(nhid+1, nhid),nn.ReLU(),nn.Linear(nhid, nhid),nn.ReLU()).to(device)
-        # self.meta_loss1 = nn.Linear(nhid, 1).to(device)
-        # self.meta_loss2 = nn.Linear(nhid, 2).to(device)
-        
-        
-        # self.exclude_meta_mlp_optimizer = Adam([params for name, params in self.named_parameters() if "meta" not in name], lr=lr)
-        
+
         self.optimizer = Adam(self.parameters(), lr=lr,weight_decay=weight_decay)
         self.scheduler = optim.lr_scheduler.ReduceLROnPlateau(self.optimizer, mode='max', factor=lr_decay, patience=patience, min_lr=1e-3)
         
