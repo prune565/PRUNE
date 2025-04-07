@@ -330,7 +330,7 @@ model.to(args['device'])
 model.fit(train_loader,valid_loader,test_loader,epochs=args["epochs"])
 model.load_state_dict(model.best_states)
 res = model.valid_metric_list
-res = sorted(res,key = lambda x:x[0],reverse=True)
+res = sorted(res,key = lambda x:x[0],reverse=True)   # get the test perf according t best validation perf
 val_score,test_score = res[0]
 
 
