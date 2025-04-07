@@ -1,5 +1,4 @@
 
-
 To run our method, here is an example for GOODMotif dataset:
 
 ```
